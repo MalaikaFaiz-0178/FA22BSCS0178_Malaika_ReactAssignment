@@ -1,30 +1,30 @@
 export default function CourseCard({ image, name, instructor, duration, price }) {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-slate-100 transition-all duration-300 flex flex-col h-full">
-      {/* Image Container */}
-      <div className="relative">
-        <img src={image} alt={name} className="w-full h-48 object-cover" />
-        <span className="absolute top-3 right-3 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col">
+      
+    
+      <div className="h-44 bg-gray-100 relative">
+        <img src={image} alt={name} className="w-full h-full object-cover" />
+        <span className="absolute top-2 right-2 bg-teal-600 text-white font-bold text-xs px-3 py-1 rounded-md">
           {price}
         </span>
       </div>
 
-      {/* Content Area (Jo image_d7827f.png mein grey tha, ab clean white hai) */}
-      <div className="p-6 flex flex-col flex-grow bg-white">
-        <h3 className="text-xl font-bold text-slate-800 mb-2 hover:text-cyan-600 transition-colors">
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="text-base font-bold text-gray-900 line-clamp-2 min-h-[48px]">
           {name}
         </h3>
-        <p className="text-slate-500 text-sm mb-4">
-          <span className="font-medium text-slate-400">Instructor:</span> {instructor}
+        <p className="text-gray-500 text-xs mt-2">
+          Teacher: <span className="font-medium text-teal-600">{instructor}</span>
         </p>
         
-        <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center text-sm">
-          <span className="text-slate-400 font-medium">⏱️ {duration}</span>
-          <button className="text-cyan-600 font-semibold hover:text-indigo-600 transition-colors">
-            Learn More →
-          </button>
+
+        <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+          <span>⏱️ Duration: {duration}</span>
+          <span className="text-teal-600 font-semibold hover:underline cursor-pointer">Read More →</span>
         </div>
       </div>
+
     </div>
   );
 }

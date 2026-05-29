@@ -1,36 +1,48 @@
 import CourseCard from "../components/CourseCard";
 
-const courses = [
+const simpleCoursesList = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400",
-    name: "React JS Core Bootcamp",
-    instructor: "Ali Khan",
-    duration: "2 Months",
-    price: "$120",
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400",
-    name: "Python for Data Science",
-    instructor: "Sara",
+    image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=500",
+    name: "Web Development & React Core",
+    instructor: "Prof. Aman Ahmed",
     duration: "3 Months",
     price: "$150",
   },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500",
+    name: "Introduction to Computer Networks",
+    instructor: "Engr. Fatima Ali",
+    duration: "4 Months",
+    price: "$180",
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500",
+    name: "Database Management Systems",
+    instructor: "Dr. K. Shah",
+    duration: "3 Months",
+    price: "$160",
+  }
 ];
 
 export default function Courses() {
   return (
-    <div className="p-8 bg-gray-50 min-h-screen">
+    <div className="p-8 bg-gray-50 min-h-screen text-gray-800">
+      
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          Our Courses
+        </h1>
+        <p className="text-gray-600 text-sm">
+          Choose from our best programs to start building your technical skills today.
+        </p>
+      </div>
 
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        Our Courses
-      </h1>
-
-      {/* FIX: Mobile par 1 card, tablet par 2 cards, aur laptops par 3 cards automatically set honge */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {courses.map((c) => (
-          <CourseCard key={c.id} {...c} />
+        {simpleCoursesList.map((course) => (
+          <CourseCard key={course.id} {...course} />
         ))}
       </div>
 

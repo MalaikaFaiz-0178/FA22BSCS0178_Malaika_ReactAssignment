@@ -1,16 +1,18 @@
-export default function TeacherCard(props) {
+export default function TeacherCard({ image, name, subject, experience }) {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow hover:shadow-xl text-center transition flex flex-col items-center justify-center border border-gray-100">
+    <div className="bg-white border border-gray-200 p-5 rounded-xl flex flex-col sm:flex-row items-center gap-5 shadow-sm w-full">
       
-      <img
-        src={props.image}
-        alt={props.name}
-        className="w-24 h-24 rounded-full object-cover shadow-md bg-gray-200"
-      />
+   
+      <div className="w-20 h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
+        <img src={image} alt={name} className="w-full h-full object-cover" />
+      </div>
 
-      <h2 className="mt-4 font-bold text-xl text-gray-800">{props.name}</h2>
-      <p className="text-blue-600 font-medium">{props.subject}</p>
-      <p className="text-sm text-gray-400 mt-1">{props.experience} Experience</p>
+ 
+      <div className="text-center sm:text-left">
+        <h3 className="text-lg font-bold text-gray-900">{name}</h3>
+        <p className="text-teal-600 text-sm font-medium">{subject}</p>
+        <p className="text-gray-500 text-xs mt-1">Experience: {experience}</p>
+      </div>
 
     </div>
   );
